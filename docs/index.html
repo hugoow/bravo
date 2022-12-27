@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-        <meta http-equiv="refresh" content="0; URL=fivem://connect/58kmm6">
-        <script type="text/javascript">
-        window.location.href = "fivem://connect/58kmm6"
-        </script>
-        <title>Bravo City!</title>
     </head>
     <body>
-        <h1>Olá</h1>
+        <input id="input "type="text">
+        <button id="btn">Enviar</button>
+<script src="https://player.live-video.net/1.13.0/amazon-ivs-player.min.js"></script>
+<video id="video-player" playsinline></video>
+<script>
+  document.getElementById('btn').onclick = function() {
+  const video = document.getElementById('input').val
+
+    if (IVSPlayer.isPlayerSupported) {
+    const player = IVSPlayer.create();
+    player.attachHTMLVideoElement(document.getElementById('video-player'));
+    player.load(video);
+    player.play();
+  }
+      
+  };
+</script>
     </body>
 </html>
